@@ -101,6 +101,7 @@ flowchart LR
 |---|---|---|
 | Project type | {{e.g. Next.js (web app), Python API (FastAPI), Mobile app (Expo / React Native), or "Other"}} | {{...}} |
 | {{Frontend / Backend / Database / Hosting}} | {{...}} | {{...}} |
+| Testing | {{Layers and tools, e.g. "Unit: Vitest · End-to-end: Playwright"; details in `tests/README.md`}} | {{...}} |
 
 ## Phases
 

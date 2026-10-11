@@ -90,7 +90,7 @@ Skip re-reading files already read earlier in this same conversation.
 
    ### Tests
    *Why:* <one line, plain words>
-   - <behavior to test>
+   - <layer>: <behavior to test>
 
    # Feature references and important notes
 
@@ -122,8 +122,10 @@ Skip re-reading files already read earlier in this same conversation.
      For example: files to create/edit, functions and signatures,
      business logic, model/schema changes and whether a migration is
      needed, commands/endpoints, config keys, dependencies to install,
-     the logic worth unit testing (business rules, validation, edge
-     cases; `/feature test` writes the tests, not `/feature implement`),
+     the logic worth testing (business rules, validation, edge cases;
+     unit by default, integration or end-to-end only where *Tests* in
+     `CLAUDE.md` calls for them; `/feature test` writes the tests, not
+     `/feature implement`),
      any new technical debt the feature knowingly introduces.
      - Group the bullets under `###` subheadings, one per file or area.
        Dependencies, migrations and tests get their own subheading when
