@@ -1,4 +1,4 @@
-# Claude Project Template 🚀
+# AI Workflow Template 🚀
 
 Start every project on the right foot with [Claude Code](https://claude.com/claude-code). Add this template to a new project and Claude gets clear instructions, solid design docs and a smooth, review-based team workflow from day one.
 
