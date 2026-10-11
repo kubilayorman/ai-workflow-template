@@ -21,7 +21,7 @@ Everything in [`template/`](template/) is copied into your project's root folder
 
    ```bash
    tmp=$(mktemp -d)
-   git clone --depth 1 https://github.com/kubilayorman/claude-project-template.git "$tmp"
+   git clone --depth 1 https://github.com/kubilayorman/ai-workflow-template.git "$tmp"
    rsync -a --ignore-existing "$tmp/template/" .
    rm -rf "$tmp"
    ```
