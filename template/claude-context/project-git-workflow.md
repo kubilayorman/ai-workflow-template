@@ -146,7 +146,7 @@ Steps 4–6 are "save your work", so every action that changes files repeats the
 | Action | What changes in the files | Its "checks" | Saves with steps 4–6? |
 |---|---|---|---|
 | `/feature implement` | The feature's code | None, you try it by hand | Yes |
-| `/feature test` | New test files, plus bug fixes if a test finds one | **Unit tests** (the whole test suite) | Yes |
+| `/feature test` | New test files, plus bug fixes if a test finds one | **Tests** (the whole test suite: unit, plus integration and end-to-end if the project has them) | Yes |
 | `/feature finalize` | Small fixes, e.g. formatting or style, plus the spec's status line | **Format, lint, type checks**, everything except the tests | Yes |
 
 Steps 7–12 (sync with `main`, check, push, open the PR) happen only once, in `/feature finalize`.

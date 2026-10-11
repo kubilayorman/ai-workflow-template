@@ -14,7 +14,7 @@ others unless that file says to.
 |---|---|---|
 | `/feature describe [VERBOSE\|SURF] "<prompt>"` | [describe.md](describe.md) | Turns the prompt into a spec file under `claude-context/`, and sets the feature's mode. |
 | `/feature implement @<spec-file>` | [implement.md](implement.md) | Builds the spec file named in the argument. No tests. |
-| `/feature test` | [test.md](test.md) | Writes unit tests for the parts worth testing, after the user approves a test plan, and runs the test suite. |
+| `/feature test` | [test.md](test.md) | Writes tests for the parts worth testing (unit by default; integration or end-to-end where the feature calls for them), after the user approves a test plan, and runs the test suite. |
 | `/feature finalize` | [finalize.md](finalize.md) | Runs the non-test checks, marks the spec done, pushes the branch, and opens a PR for a teammate to approve. No tests. |
 
 ## Routing rule

@@ -277,5 +277,5 @@ npx expo start
 ## To add later
 
 - Other project types (e.g. static site, Chrome extension, monorepo).
-- Common add-ons per type: testing, linting, database, environment variables.
+- Common add-ons per type: linting, database, environment variables. (Testing is set up by `/setup`.)
 - Install steps for Windows and Linux.

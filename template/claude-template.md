@@ -69,21 +69,27 @@ All must pass locally before pushing or opening a PR. Run them in this order:
 1. `{{lint command}}`
 2. `{{format check command}}`
 3. `{{type check command}}` <!-- delete if none -->
-4. `{{test command}}` {{— needs: e.g. local services running and migrations applied}}
+4. `{{unit + integration test command}}` {{— needs: e.g. local services running and migrations applied}}
+5. `{{end-to-end test command}}` <!-- delete if no end-to-end tests -->
 
-In the `/feature` workflow, `/feature test` runs the test command and `/feature finalize` runs the
+In the `/feature` workflow, `/feature test` runs the test commands and `/feature finalize` runs the
 others.
 
 {{If CI exists: CI runs the same checks on every push.}}
 
 ## Tests
 
-- Where tests live and how they're named: {{e.g. "`tests/`, one file per feature, named
-  `test_<feature>.py`"}}
-- Shared helpers and fixtures: {{e.g. "`tests/conftest.py`"}}
-- Only unit tests, and only for logic worth testing: business rules, calculations, validation,
-  permissions, edge cases, error handling. Not for code that only passes data along or calls a
-  framework.
+- Full guide: `tests/README.md` — layers, tools, how to run, naming, what's worth testing.
+- Layers and tools: {{e.g. "unit (Vitest), end-to-end (Playwright)"}}
+- Where tests live and how they're named: {{e.g. "`tests/unit/test_<feature>.py`,
+  `tests/integration/test_<area>.py`"}}
+- Shared helpers and fixtures: {{e.g. "`tests/conftest.py`, `tests/fixtures/`, `tests/helpers/`"}}
+- Unit tests by default, and only for logic worth testing: business rules, calculations,
+  validation, permissions, edge cases, error handling. Not for code that only passes data along or
+  calls a framework.
+- Integration tests only for features that add or change an API endpoint, a database query or a
+  call to an outside service. End-to-end tests only for features that add or change a core user
+  flow from `docs/architecture.md`. Only use the layers listed above.
 
 ## Database migrations
 

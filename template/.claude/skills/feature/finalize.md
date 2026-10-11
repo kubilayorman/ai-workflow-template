@@ -79,7 +79,7 @@ Steps marked *(migrations only)* apply only if `CLAUDE.md` has a
    in `CLAUDE.md`. *(migrations only)* Apply all migrations; if the
    branch adds a migration, roll back one and apply again. Then run every
    command under *Checks* in `CLAUDE.md`, in order, except the test
-   command: tests are `/feature test`'s job.
+   commands: tests are `/feature test`'s job.
 
    If anything fails: in VERBOSE, explain the failure in plain language,
    propose the fix, and wait for a go-ahead. In SURF, fix it, then
