@@ -1,16 +1,15 @@
 <!--
 TEMPLATE — layout for tests/README.md
-Used by /setup. Fill every {{placeholder}} from the testing confirmed in the interview and the project's files.
-- Keep only the layers that were chosen: delete the rows and sections of the others.
-- Use real commands, paths and file names from the project. Never guess.
+Used by /setup. Fill every {{placeholder}} from the confirmed testing and the project's files.
+- Keep only the chosen layers; delete the others' rows and sections.
+- Use real commands, paths and file names. Never guess.
 - Keep the section headings: CLAUDE.md and /feature test refer to this file.
 - Delete this comment and every other template comment.
 -->
 
 # Tests
 
-How this project is tested: which kinds of tests there are, where they live, and how to run them.
-Tests are written by `/feature test`, after a feature is built.
+Which kinds of tests this project has, where they live, and how to run them. `/feature test` writes them after a feature is built.
 
 ## Layers
 
@@ -37,15 +36,11 @@ Tests are written by `/feature test`, after a feature is built.
 
 ## What's worth testing
 
-Test only what could break without anyone noticing. Skip code that only passes data along, sets up
-config or layout, or calls a framework or library without logic of its own.
+Test only what could break unnoticed. Skip code that only passes data along, sets up config or layout, or calls a library without logic of its own.
 
-- **Unit (the default):** business rules, calculations, validation, permissions, status changes,
-  edge cases and error handling.
-- **Integration:** a feature that adds or changes an API endpoint, a database query, or the way the
-  app talks to an outside service.
-- **End-to-end:** only a feature that adds or changes a core user flow from `docs/architecture.md`.
-  Few and slow: one test per flow, covering the main successful path.
+- **Unit (default):** business rules, calculations, validation, permissions, status changes, edge cases, error handling.
+- **Integration:** a new or changed API endpoint, database query, or outside-service call.
+- **End-to-end:** only a new or changed core user flow from `docs/architecture.md`. Few and slow: one test per flow, main successful path.
 
 ## Shared helpers and fixtures
 

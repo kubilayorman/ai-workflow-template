@@ -5,33 +5,22 @@
 
 <!--
 TEMPLATE INSTRUCTIONS
-- This is action 3. It runs after `claude-context/Project Overview/FILE_DESCRIPTIONS.md` and `claude-context/Project Overview/DATABASE_OVERVIEW.md` have been written or updated in the same run.
-- Summarize the two earlier documents. Do not repeat their detail; link to it.
+- Action 3: runs after FILE_DESCRIPTIONS.md and DATABASE_OVERVIEW.md are written or updated in the same run.
+- Summarize them; link to their detail instead of repeating it.
 - Flow step numbers follow "Core flow step numbers" in 00_GENERATION_RULES.md.
 - Follow 00_GENERATION_RULES.md and 01_LANGUAGE_GUIDE.md.
-- Everything inside HTML comments is guidance. Remove it from the final document.
+- HTML comments are guidance. Remove them from the final document.
 -->
 
 ## At a Glance
 
-<!--
-Answer:
-- What does this app do, in one sentence?
-- Who uses it, and what problem does it solve for them?
-- What is its current status (prototype, in production, maintenance)?
-Keep this to three to five sentences. A stakeholder who reads only this section should understand what the app is.
--->
+<!-- Three to five sentences: what the app does, who uses it and for what problem, and its status (prototype, production, maintenance). A stakeholder reading only this should understand the app. -->
 
 {{...}}
 
 ## Glossary
 
-<!--
-Answer:
-- Which business terms and internal names would confuse a newcomer?
-- Which code names differ from business names (for example `Client` in code means "customer")?
-One line per term. Sort alphabetically. All three documents use these names.
--->
+<!-- Terms that would confuse a newcomer, including code names that differ from business names (`Client` in code means "customer"). One line each, alphabetical. All three documents use these names. -->
 
 | Term | Meaning |
 |---|---|
@@ -39,12 +28,7 @@ One line per term. Sort alphabetically. All three documents use these names.
 
 ## Tech Stack
 
-<!--
-Answer:
-- Which languages, frameworks, database, and hosting does the app use?
-- Which key libraries matter for understanding the app? (skip small utilities)
-- Which third-party services does it depend on (payments, email, auth, AI APIs), and what is each used for?
--->
+<!-- Languages, frameworks, database, hosting, key libraries (skip small utilities), and third-party services (payments, email, auth, AI APIs) with what each is used for. -->
 
 | Part | Technology | Used for |
 |---|---|---|
@@ -55,12 +39,8 @@ Answer:
 ## High-Level Architecture
 
 <!--
-Answer:
-- What are the main parts of the app (for example: web page, API, background worker, database, external services)?
-- What does each part do, in one sentence?
-- How do the parts talk to each other (web requests, queues, webhooks, scheduled jobs)?
-- What runs where (browser, server, cloud service)?
-Start with one plain-language paragraph, then the diagram, then one line per part.
+The main parts (web page, API, worker, database, external services), what each does, how they talk (requests, queues, webhooks, schedules), and what runs where.
+One plain paragraph, then the diagram, then one line per part.
 -->
 
 {{Plain-language paragraph.}}
@@ -75,12 +55,8 @@ flowchart LR
 ## Core Data Flow
 
 <!--
-Answer:
-- What starts the main flow (a user action, a schedule, an incoming webhook)?
-- What happens at each step, from start to final result?
-- For each step: which part of the app does it, which file or function, and which tables are read or written?
-- What does the user or business get at the end?
-Describe only the main successful path. Step numbers follow "Core flow step numbers" in 00_GENERATION_RULES.md.
+What starts the main flow (user action, schedule, webhook), each step to the final result, and what the user or business gets.
+Per step: the part of the app, the file or function, and the tables read or written. Main successful path only.
 -->
 
 {{One or two sentences on what the flow achieves.}}
@@ -107,12 +83,8 @@ sequenceDiagram
 ## Phases
 
 <!--
-Answer:
-- Take the phases, their goals and the current phase from `docs/project-phase-plan.md`. Link to it.
-- What does each phase deliver, in one business sentence and one technical sentence?
-- For the current phase: what is done, and what is not built yet? Judge this from the code, not
-  from the phase plan, which does not track progress.
-Only describe phases the repository documents. Do not invent a roadmap.
+Phases, goals and current phase come from `docs/project-phase-plan.md` (link it). Each phase: one business and one technical sentence.
+For the current phase, judge what's done from the code; the plan doesn't track progress. Don't invent a roadmap.
 -->
 
 {{One or two sentences on how the work is split into phases, and which phase is current.}}
@@ -125,12 +97,7 @@ Only describe phases the repository documents. Do not invent a roadmap.
 
 ## Repository Structure
 
-<!--
-Answer:
-- What does each top-level folder contain?
-- Where should a new developer start reading?
-Only top-level folders, plus one level deeper where it helps. Link to FILE_DESCRIPTIONS.md for detail.
--->
+<!-- Top-level folders (one level deeper where it helps) and where a new developer should start. Link to FILE_DESCRIPTIONS.md for detail. -->
 
 ```
 {{project-root}}/
@@ -144,13 +111,8 @@ Only top-level folders, plus one level deeper where it helps. Link to FILE_DESCR
 ## Development Workflow
 
 <!--
-Answer:
-- How do you set up and run the project locally? Give exact numbered steps and commands.
-- How do you run tests, linting, and formatting?
-- What is the branching, pull request, and review process?
-- How does CI/CD work, and how does code reach production?
-- How do you add a database migration? Link to DATABASE_OVERVIEW.md rather than repeating it.
-Only include what the repository shows (README, scripts, CI config). Mark anything else with ⚠️ Needs confirmation.
+Exact numbered setup and run commands; tests, lint and format; branching and review; CI/CD and how code reaches production.
+Only what the repository shows (README, scripts, CI config); mark anything else ⚠️ Needs confirmation.
 -->
 
 ### Run Locally
@@ -177,23 +139,13 @@ See [Migrations and Schema Changes](DATABASE_OVERVIEW.md#migrations-and-schema-c
 
 ## Logging, Monitoring and Errors
 
-<!--
-Answer:
-- Where do logs go, and how do you read them?
-- How are errors reported (error tracker, alerts, email)?
-- What happens when an external service fails (retry, error shown, job queued)?
--->
+<!-- Where logs go and how to read them, how errors are reported, and what happens when an external service fails. -->
 
 {{...}}
 
 ## Known Limitations and Technical Debt
 
-<!--
-Answer:
-- What is fragile, incomplete, or planned for rework?
-- Use TODO/FIXME comments, open issues, and obvious gaps as sources.
-Write each item as a plain fact, one line each. No blame, no judgement.
--->
+<!-- What's fragile, incomplete or due for rework (from TODO/FIXME, open issues, obvious gaps). One plain fact per line, no blame. -->
 
 - {{...}}
 

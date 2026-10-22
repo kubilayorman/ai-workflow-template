@@ -5,20 +5,14 @@
 
 <!--
 TEMPLATE INSTRUCTIONS
-- This is action 1. It runs first and is built directly from the code.
+- Action 1: runs first, built directly from the code.
 - Follow 00_GENERATION_RULES.md (depth rule, update mode, cross-linking) and 01_LANGUAGE_GUIDE.md.
-- Everything inside HTML comments is guidance. Remove it from the final document.
-- Document by business value: full detail for code that creates, changes, or deletes business data, applies business rules, starts a flow, or calls an external service. One line for helpers. Leave out imports, internal dependencies, and plumbing.
+- HTML comments are guidance. Remove them from the final document.
 -->
 
 ## How to Read This Document
 
-<!--
-Answer:
-- How are the files ordered (by area or folder)?
-- What do the labels mean? (keep the table below)
-- What was left out, and why?
--->
+<!-- How are the files ordered (by area or folder)? What was left out, and why? Keep the label table. -->
 
 {{One or two sentences on how the document is ordered and what it covers.}}
 
@@ -32,11 +26,8 @@ Answer:
 ## Business Actions Index
 
 <!--
-Answer:
-- For each main business entity (Customer, Order, Invoice, ...), where is it created, changed, and removed?
-- One row per entity. Link each function to its section below.
-- This table lets a reader answer "where are customers created?" at a glance.
-- Write "Never" if the app never does that action.
+One row per main business entity: where is it created, changed and removed? Link each function to its section below.
+Answers "where are customers created?" at a glance. Write "Never" if the app never does that action.
 -->
 
 | Entity | Created in | Changed in | Removed in |
@@ -45,11 +36,7 @@ Answer:
 
 ## File Index
 
-<!--
-Answer:
-- What files are documented, which area does each belong to, and what does each do in one line?
-- List files in the same order as the sections below.
--->
+<!-- Each documented file, its area, and one line on what it does, in the same order as the sections below. -->
 
 | File | Area | Purpose |
 |---|---|---|
@@ -59,10 +46,7 @@ Answer:
 
 ## {{Area or Folder Name}}
 
-<!--
-Answer:
-- What does this group of files do together, in one or two sentences?
--->
+<!-- What does this group of files do together, in one or two sentences? -->
 
 {{Group summary.}}
 
@@ -71,44 +55,41 @@ Answer:
 
 **Labels:** {{🚪 🗄️ 🌐 ⏱️ — only those that apply}}
 
-**Purpose:** <!-- What is this file for? One or two plain sentences. --> {{...}}
+**Purpose:** <!-- One or two plain sentences. --> {{...}}
 
-**Role in the app:** <!-- Which part of the app is this (page, API, business logic, background job)? Which core flow step uses it? Link the step in PROJECT_OVERVIEW.md once it exists. --> {{...}}
+**Role in the app:** <!-- Page, API, business logic or background job? Which core flow step uses it (link it in PROJECT_OVERVIEW.md)? --> {{...}}
 
-**Data touched:** <!-- Which tables does it create, change, delete, or read? Link each to DATABASE_OVERVIEW.md. Write "None" if none. --> {{...}}
+**Data touched:** <!-- Tables it creates, changes, deletes or reads, linked to DATABASE_OVERVIEW.md. "None" if none. --> {{...}}
 
-**External effects:** <!-- Does it send email, take payments, call outside APIs, or write files? Write "None" if none. --> {{...}}
+**External effects:** <!-- Email, payments, outside APIs, files written. "None" if none. --> {{...}}
 
 #### `{{function_name}}({{inputs}})`
 
 <!-- Repeat for each function worth documenting in full (see depth rule). -->
 
 - **What it does:** <!-- One sentence. --> {{...}}
-- **Inputs:** <!-- What goes in, in words: "the customer's email and chosen plan", not only types. --> {{...}}
-- **Output:** <!-- What comes back, or what the result is. --> {{...}}
-- **Side effects:** <!-- What changes outside the function: rows saved, emails sent, status changed. "None" if none. --> {{...}}
-- **Triggered by:** <!-- Which user action, page, route, job, or other function calls this, in business terms. --> {{...}}
-- **Worth knowing:** <!-- Only business rules, limits, or notable failure cases. Leave this line out if there is nothing. --> {{...}}
+- **Inputs:** <!-- In words: "the customer's email and chosen plan", not only types. --> {{...}}
+- **Output:** <!-- What comes back, or the result. --> {{...}}
+- **Side effects:** <!-- Rows saved, emails sent, status changed. "None" if none. --> {{...}}
+- **Triggered by:** <!-- The user action, page, route, job or function that calls it, in business terms. --> {{...}}
+- **Worth knowing:** <!-- Only business rules, limits or notable failure cases. Leave out if nothing. --> {{...}}
 
 #### Class `{{ClassName}}`
 
-<!-- Use this block instead of the function block for classes. -->
+<!-- Use instead of the function block for classes. -->
 
-- **Represents:** <!-- What real-world thing or job does this class stand for? --> {{...}}
-- **Key data it holds:** <!-- Only attributes that matter to the business. --> {{...}}
+- **Represents:** <!-- The real-world thing or job it stands for. --> {{...}}
+- **Key data it holds:** <!-- Only business-relevant attributes. --> {{...}}
 - **Methods:**
-  - `{{method_name}}({{inputs}})` — <!-- What it does, what goes in, what comes out, any side effects. One or two sentences. --> {{...}}
+  - `{{method_name}}({{inputs}})` — <!-- What it does, inputs, output, side effects. One or two sentences. --> {{...}}
 
-**Notes:** <!-- Optional. Anything surprising: misleading names, legacy behaviour, known problems. Leave out if nothing. --> {{...}}
+**Notes:** <!-- Optional: misleading names, legacy behaviour, known problems. --> {{...}}
 
 ---
 
 ## Summarized Files
 
-<!--
-Files with little business value (helpers, utilities, setup, wiring).
-One line each. No function details.
--->
+<!-- Helpers, utilities, setup, wiring: one line each, no function details. -->
 
 | File | Purpose |
 |---|---|
