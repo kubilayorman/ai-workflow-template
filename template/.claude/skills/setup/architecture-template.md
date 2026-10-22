@@ -1,12 +1,9 @@
 <!--
 TEMPLATE — layout for docs/architecture.md
-Used by /setup. Fill every {{placeholder}} from the user's confirmed answers and the code.
-- Keep the section headings: /professorslughorn reads and updates this file and maps its sections onto
-  PROJECT_OVERVIEW.md and DATABASE_OVERVIEW.md.
-- Use the users' own business words for entities and steps. Names chosen here are the names used
-  in code, the database and every later doc. If the code already names an entity, use the code's
-  name and mention the business word in its Purpose line.
-- Never guess. Anything unanswered goes under "Open questions".
+Used by /setup. Fill every {{placeholder}} from the confirmed answers and the code.
+- Keep the section headings: /professorslughorn maps them onto PROJECT_OVERVIEW.md and DATABASE_OVERVIEW.md.
+- Use the users' business words for entities and steps; these names carry into code, database and later docs. If the code already names an entity, use that name and mention the business word in its Purpose line.
+- Never guess. Unanswered items go under "Open questions".
 - Delete this comment and every other template comment.
 -->
 
@@ -14,9 +11,7 @@ Used by /setup. Fill every {{placeholder}} from the user's confirmed answers and
 
 > **Status:** {{Planned / Partly built / Built}} · **Last updated:** {{YYYY-MM-DD}}
 
-This document is a snapshot of the domain model, design, tech stack and naming as of the date
-above, plus what is planned but not built yet. The code is always the source of truth, and it moves
-ahead of this document as features are built.
+A snapshot of the domain model, design, tech stack and naming as of the date above, plus what's planned but not built. The code is always the source of truth and moves ahead of this document.
 
 ## Overview
 
