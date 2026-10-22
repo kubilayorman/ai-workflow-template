@@ -1,6 +1,6 @@
 # Language Guide
 
-Every document the skill writes follows these rules. The readers are non-technical stakeholders and junior developers. They should understand each sentence on the first read.
+Every document the skill writes follows these rules. Non-technical stakeholders and junior developers should understand each sentence on first read.
 
 ## Core Principles
 
@@ -11,24 +11,22 @@ Every document the skill writes follows these rules. The readers are non-technic
 
 ## Sentences
 
-- Keep sentences under 25 words. Split longer ones.
-- Put one idea in each sentence.
-- Use active voice: "The app sends a confirmation email", not "A confirmation email is sent".
-- Use present tense: "This function creates a customer", not "This function will create a customer".
-- Name who or what does the action: "The checkout page calls `create_order`", not "`create_order` is called".
-- Start each section with one or two sentences a non-technical reader can follow. Put technical detail after that.
+- Under 25 words and one idea per sentence. Split longer ones.
+- Active voice, naming who acts: "The checkout page calls `create_order`", not "`create_order` is called".
+- Present tense: "This function creates a customer", not "will create".
+- Open each section with one or two sentences a non-technical reader can follow; technical detail after.
 
 ## Words
 
 - Use everyday words. Write "use" not "utilize", "help" not "facilitate", "start" not "initiate", "show" not "display functionality for".
-- Define each technical term the first time it appears, in a few words: "an API (a way for two programs to talk to each other)". After that, add the term to the Glossary in the Project Overview and use it without explaining.
-- Call each thing by one name everywhere. If the code says `Client` but the business says "customer", pick one, explain the link once, then stick to it.
-- Write names from the code in `backticks`: `customers` table, `create_order()` function, `src/services/billing.py` file.
-- Use exact numbers when the code gives them: "retries 3 times", not "retries a few times".
+- Define each technical term on first use, in a few words: "an API (a way for two programs to talk to each other)". Then add it to the Project Overview Glossary and use it freely.
+- One name per thing everywhere. If the code says `Client` and the business says "customer", pick one and explain the link once.
+- Code names in `backticks`: `customers` table, `create_order()`, `src/services/billing.py`.
+- Exact numbers when the code gives them: "retries 3 times", not "a few times".
 
 ## Banned: Marketing and Filler
 
-Do not use these words or anything like them. They add no information.
+Don't use these words or anything like them. They add no information.
 
 | Do not write | Why |
 |---|---|
@@ -41,30 +39,33 @@ Do not use these words or anything like them. They add no information.
 
 ## Honesty
 
-- State facts as facts. Do not hedge with "might", "should", or "probably" when the code gives a clear answer.
-- When the code does not give a clear answer, say so with `⚠️ Needs confirmation`. Do not guess, and do not hide the gap with vague wording.
-- Do not praise or criticize the code. Describe it. Known problems belong in "Known Limitations", written as plain facts.
+- State facts as facts. No "might", "should" or "probably" when the code is clear.
+- When it isn't, say so with `⚠️ Needs confirmation`. Don't guess or hide the gap in vague wording.
+- Describe the code; don't praise or criticize it. Known problems go in "Known Limitations", as plain facts.
 
 ## Structure
 
-- Use headings as plain labels: "Creating a Customer", not "The Magic of Customer Onboarding".
-- Use lists for steps, options, or parallel items. Use short paragraphs for explanations.
-- Use tables for repeated fields that readers compare (table fields, file index).
-- Number steps that happen in order.
-- Keep each description as short as it can be while still complete. One clear sentence beats three vague ones.
+- Headings are plain labels: "Creating a Customer", not "The Magic of Customer Onboarding".
+- Lists for steps, options or parallel items; numbered when ordered. Short paragraphs for explanations.
+- Tables for repeated fields readers compare (table fields, file index).
+- As short as possible while complete. One clear sentence beats three vague ones.
 
 ## Before and After
 
 **Before:** "The `OrderService` leverages a robust, event-driven architecture to seamlessly orchestrate the end-to-end order lifecycle."
+
 **After:** "`OrderService` creates orders, updates their status, and sends an event when an order is paid."
 
 **Before:** "In order to facilitate customer onboarding, the system utilizes a comprehensive validation layer."
+
 **After:** "Before creating a customer, the app checks that the email is valid and not already registered."
 
 **Before:** "Data is persisted to the database and subsequently an email notification is dispatched."
+
 **After:** "The app saves the order to the `orders` table, then emails the customer a receipt."
 
 **Before:** "This function basically just handles the stuff related to invoices."
+
 **After:** "This function creates a PDF invoice for a paid order and stores it in `invoices`."
 
 ## Final Language Check

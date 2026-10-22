@@ -5,21 +5,15 @@
 
 <!--
 TEMPLATE INSTRUCTIONS
-- This is action 2. It runs after `claude-context/Project Overview/FILE_DESCRIPTIONS.md` has been written or updated in the same run.
-- Use FILE_DESCRIPTIONS.md (especially the Business Actions Index) to fill in where each table is created, changed, deleted, and read. Confirm against the code.
+- Action 2: runs after FILE_DESCRIPTIONS.md is written or updated in the same run.
+- Use FILE_DESCRIPTIONS.md (especially the Business Actions Index) for where each table is created, changed, deleted and read. Confirm against the code.
 - Follow 00_GENERATION_RULES.md and 01_LANGUAGE_GUIDE.md.
-- Everything inside HTML comments is guidance. Remove it from the final document.
+- HTML comments are guidance. Remove them from the final document.
 -->
 
 ## At a Glance
 
-<!--
-Answer:
-- What does the data represent overall? One plain-language paragraph.
-- Which database engine is used, and where is it hosted?
-- Which tool defines the tables and runs migrations (ORM or migration tool)?
-- How many tables are there?
--->
+<!-- What the data represents overall, in one plain paragraph. Then: database engine and hosting, the tool that defines tables and runs migrations, number of tables. -->
 
 {{One paragraph a non-technical reader can follow.}}
 
@@ -31,11 +25,7 @@ Answer:
 
 ## Entity Relationship Diagram
 
-<!--
-Answer:
-- How do all tables connect? Show every table and relationship.
-- If there are more than about 15 tables, show the main ones here and note which are left out.
--->
+<!-- Every table and relationship. Over ~15 tables: show the main ones and note which are left out. -->
 
 ```mermaid
 erDiagram
@@ -44,30 +34,30 @@ erDiagram
 
 ## Tables
 
-<!-- Repeat the block below for each table. Order tables so related ones sit together, main business tables first. -->
+<!-- Repeat per table. Related tables together, main business tables first. -->
 
 <a id="table-{{table_name}}"></a>
 ### `{{table_name}}`
 
-**Purpose:** <!-- Why does this table exist? One sentence. --> {{...}}
+**Purpose:** <!-- Why the table exists, in one sentence. --> {{...}}
 
-**One row represents:** <!-- For example: "one order placed by a customer". --> {{...}}
+**One row represents:** <!-- E.g. "one order placed by a customer". --> {{...}}
 
 **Fields:**
 
-<!-- Describe each field in business terms. Put constraints (unique, default, allowed values) in the last column. -->
+<!-- Each field in business terms. Constraints (unique, default, allowed values) in the last column. -->
 
 | Field | Type | Required | Description | Example / Constraints |
 |---|---|---|---|---|
 | `{{id}}` | {{uuid}} | Yes | {{...}} | {{Primary key}} |
 
-**Keys and indexes:** <!-- Primary key, foreign keys, unique constraints. Indexes only if they exist for a clear reason; say the reason. --> {{...}}
+**Keys and indexes:** <!-- Primary, foreign and unique keys. Indexes only if they have a clear reason; give it. --> {{...}}
 
-**Relationships:** <!-- Plain language first, then the technical form. Example: "One customer has many orders (1:N via `orders.customer_id`)." --> {{...}}
+**Relationships:** <!-- Plain language, then technical: "One customer has many orders (1:N via `orders.customer_id`)." --> {{...}}
 
 **Lifecycle:**
 
-<!-- Link each function to FILE_DESCRIPTIONS.md. Write "Never" where the app does not do that action. -->
+<!-- Link each function to FILE_DESCRIPTIONS.md. "Never" where the app doesn't do that action. -->
 
 | Action | Where | When |
 |---|---|---|
@@ -76,7 +66,7 @@ erDiagram
 | Deleted | {{...}} | {{Soft or hard delete? What else gets deleted with it?}} |
 | Read | {{...}} | {{Which features use it}} |
 
-**Status values:** <!-- Only if the table has a status-like field. List allowed values and how a row moves between them. Add a small state diagram if there are more than three states. Leave out otherwise. -->
+**Status values:** <!-- Only for a status-like field: allowed values and how a row moves between them. State diagram if more than three states. Leave out otherwise. -->
 
 ```mermaid
 stateDiagram-v2
@@ -84,19 +74,15 @@ stateDiagram-v2
     {{pending}} --> {{paid}}
 ```
 
-**Sensitive data:** <!-- Which fields hold personal or secret data? Write "None" if none. --> {{...}}
+**Sensitive data:** <!-- Fields with personal or secret data. "None" if none. --> {{...}}
 
-**Worth knowing:** <!-- Optional. Misleading names, legacy fields, unused columns. Leave out if nothing. --> {{...}}
+**Worth knowing:** <!-- Optional: misleading names, legacy fields, unused columns. --> {{...}}
 
 ---
 
 ## Relationships Summary
 
-<!--
-Answer:
-- What are all the relationships in one place?
-- For each many-to-many relationship, what does the linking table mean in business terms?
--->
+<!-- All relationships in one place. For each many-to-many, say what the linking table means in business terms. -->
 
 | From | To | Type | Via | On delete |
 |---|---|---|---|---|
@@ -107,10 +93,8 @@ Answer:
 ## Data Through the Core Flow
 
 <!--
-Answer:
-- As the main flow runs, which tables are created (C), read (R), updated (U), or deleted (D) at each step?
-- Rows are flow steps; columns are tables. Step numbers follow "Core flow step numbers" in 00_GENERATION_RULES.md.
-- Follow the table with two or three sentences describing the flow of data in plain language.
+Rows are flow steps, columns are tables: created (C), read (R), updated (U) or deleted (D) at each step.
+Step numbers follow "Core flow step numbers" in 00_GENERATION_RULES.md. Follow with two or three plain sentences on how data flows.
 -->
 
 | Step | `{{table_a}}` | `{{table_b}}` | `{{table_c}}` |
@@ -122,11 +106,6 @@ Answer:
 
 ## Migrations and Schema Changes
 
-<!--
-Answer:
-- Where do migrations live?
-- How do you create a new migration and run it? Give the exact commands.
-- What naming or ordering conventions does the project use?
--->
+<!-- Where migrations live, the exact commands to create and run one, and naming or ordering conventions. -->
 
 {{...}}
