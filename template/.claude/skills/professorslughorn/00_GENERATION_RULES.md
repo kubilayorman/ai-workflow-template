@@ -64,12 +64,13 @@ For an existing document:
 
 1. Compare every section against the files on disk, which match the latest `main` (Step 0 in `SKILL.md`). Don't use git history to decide what changed.
 2. A section is affected if anything it describes no longer matches the code, including added, removed or renamed files, functions and tables.
-3. Rewrite only affected sections. Keep the rest word for word.
-4. Never change text between `<!-- manual:start -->` and `<!-- manual:end -->`; people write these by hand.
-5. Keep each `⚠️ Needs confirmation` marker until the code or the user answers it.
-6. Fix cross-links to renamed or removed items.
-7. Update the last updated date only if a section changed. Otherwise leave the document untouched, header included: a new date alone isn't a change.
-8. Tell the user what changed, in a short list.
+3. Compare the document's headings with its template. This catches template changes from a template update. Add a section the document lacks, written from the code. Rename a heading the template spells differently. Keep a section the template no longer has, and mention it in the report.
+4. Rewrite only affected sections. Keep the rest word for word.
+5. Never change text between `<!-- manual:start -->` and `<!-- manual:end -->`; people write these by hand.
+6. Keep each `⚠️ Needs confirmation` marker until the code or the user answers it.
+7. Fix cross-links to renamed or removed items.
+8. Update the last updated date only if a section changed. Otherwise leave the document untouched, header included: a new date alone isn't a change.
+9. Tell the user what changed, in a short list.
 
 ## Depth Rule: Focus on Business Value
 
