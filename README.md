@@ -32,11 +32,16 @@ Everything in [`template/`](template/) is copied into your project's root folder
 
 ## Updating
 
-The install command skips existing files, so delete the old template files first, then run it again:
+Open Claude Code in your project and paste:
 
-```bash
-rm -rf .claude/skills/setup .claude/skills/feature .claude/skills/professorslughorn .claude/skills/project-overview
-rm -f claude-context/ai-interaction.md claude-context/project-git-workflow.md
+```
+Clone https://github.com/kubilayorman/ai-workflow-template into a temporary folder outside this project, then follow its UPDATING.md to update this project.
 ```
 
-Your feature specs and Project Overview docs are left untouched. Afterwards, delete `claude-template.md` again: only `/setup` needs it.
+Claude works on a new branch and doesn't commit, so you can review every change. It handles three kinds of files:
+
+- **Template files** (the skills, `ai-interaction.md`, `project-git-workflow.md`): replaced with the new version. If you changed one, Claude asks whether to keep your changes.
+- **Files `/setup` wrote** (`CLAUDE.md`, `docs/architecture.md`, `docs/project-phase-plan.md`, `tests/README.md`): new sections and wording from the new templates are added. Your content stays.
+- **Your own files** (feature specs, Project Overview docs, screenshots, your own skills): not touched.
+
+Once the update is merged, run `/professorslughorn` on `main` to add any new sections to your Project Overview docs.
